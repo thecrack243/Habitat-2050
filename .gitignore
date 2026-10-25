@@ -1,0 +1,29 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+*.log
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Raw Challenge 4 data and project instructions must remain included.
+# Promote only reviewed generated outputs into the final handoff.
+/data/processed/*
+!/data/processed/README.md
+/artifacts/*
+!/artifacts/README.md
+!/artifacts/evaluation.json
+!/artifacts/habitat-2050-evidence.zip

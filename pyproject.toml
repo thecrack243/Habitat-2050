@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "habitat-2050"
+version = "0.1.0"
+description = "Bilingual Streamlit habitat suitability and climate scenario explorer"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "streamlit>=1.51,<2",
+    "pandas>=2.2,<3",
+    "numpy>=1.26,<3",
+    "scikit-learn>=1.5,<2",
+    "plotly>=5.24,<7",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["habitat2050*"]

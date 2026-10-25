@@ -1,0 +1,13 @@
+﻿item,variable,rank,value
+auc_interval_lower,,,0.45
+auc_interval_upper,,,0.90
+variable_importance_rf,forest_cover_pct,1,0.0789
+variable_importance_rf,bio12_annual_precip_mm,2,0.0086
+variable_importance_rf,ndvi_growing_season,3,0.0008
+variable_importance_rf,elevation_m,4,0.0007
+variable_importance_rf,bio1_annual_mean_temp_degC,5,0.0002
+variable_importance_lr,forest_cover_pct,1,0.7442
+variable_importance_lr,bio1_annual_mean_temp_degC,2,0.5182
+variable_importance_lr,bio12_annual_precip_mm,3,0.4453
+variable_importance_lr,elevation_m,4,0.3206
+variable_importance_lr,ndvi_growing_season,5,0.1478

@@ -1,0 +1,110 @@
+{
+  "model_version": "1.0.0",
+  "model": "RandomForestClassifier",
+  "parameters": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": 6,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 3,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 300,
+    "n_jobs": 1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "seed": 42,
+  "features": [
+    "elevation_m",
+    "bio1_annual_mean_temp_degC",
+    "bio12_annual_precip_mm",
+    "ndvi_growing_season",
+    "forest_cover_pct"
+  ],
+  "source_sha256": {
+    "env_factors.csv": "de869cecfc1cb816891b73811faac3309aaeaea666806507fb8d6c52d672899e",
+    "env_scenario_2050.csv": "2096a5f8a566bf4b5870321d5db06ef59440b14e083fc8a2afe5c2810596372b",
+    "occurrence_records.csv": "f64eef27b36b52831a85dfaa9e73025b8142836c04c1e46548de01f24e4900fc"
+  },
+  "background_policy": "Uniform unique non-presence grid cells; not verified absences.",
+  "background_ratio": 3,
+  "presence_cells": 34,
+  "background_cells": 102,
+  "train_cells": 102,
+  "validation_cells": 34,
+  "validation_presence_cells": 8,
+  "validation_background_cells": 26,
+  "split_method": "Stratified random holdout, 25%; no spatial blocking.",
+  "validation_roc_auc": 0.8173076923076924,
+  "validation_average_precision": 0.7152777777777777,
+  "validation_confusion_at_0_5": [
+    [
+      24,
+      2
+    ],
+    [
+      3,
+      5
+    ]
+  ],
+  "threshold_policy": "Illustrative default 0.5; user sensitivity control; never tuned on validation.",
+  "projection_model": "Same training-only model as evaluated; no refit on validation.",
+  "scenario": {
+    "pathway": "SSP2-4.5",
+    "gcm": "MPI-ESM1-2-HR",
+    "future_period": "2041-2060",
+    "current_climate_period": "1970-2000",
+    "static_layers": [
+      "elevation_m",
+      "ndvi_growing_season",
+      "forest_cover_pct"
+    ]
+  },
+  "importance_method": "Held-out permutation ROC-AUC decrease; 10 repeats; not causal.",
+  "extrapolation_method": "Any predictor outside training-set min/max; not a confidence interval.",
+  "area_method": "WGS84 ellipsoid integration along meridians and parallels.",
+  "audit_counts": {
+    "duplicate_grid": 74,
+    "retained": 34,
+    "missing_or_invalid_coordinates": 15,
+    "outside_or_unmatched_grid": 5
+  },
+  "limitations": [
+    "Preliminary non-spatial validation; spatial autocorrelation may inflate metrics.",
+    "Only 34 unique matched presence cells in the supplied package.",
+    "Background labels are not verified absences; scores are relative suitability.",
+    "One climate scenario; vegetation is static and dispersal is not modeled.",
+    "No independent test set, calibration, or background-sampling sensitivity study.",
+    "Not for conservation, land-use, or policy decisions."
+  ],
+  "versions": {
+    "streamlit": "1.66.1",
+    "pandas": "2.3.3",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.1",
+    "plotly": "6.9.0"
+  },
+  "default_summary": {
+    "threshold": 0.5,
+    "current_area_km2": 26720.58496238219,
+    "future_area_km2": 24819.754698596706,
+    "delta_area_km2": -1900.830263785483,
+    "delta_percent": -7.113729981815564,
+    "class_areas_km2": {
+      "stable_suitable": 23610.82559700328,
+      "lost": 3109.759365378907,
+      "gained": 1208.9291015934239,
+      "stable_unsuitable": 144113.609768169
+    },
+    "future_extrapolated_cells": 221
+  }
+}
